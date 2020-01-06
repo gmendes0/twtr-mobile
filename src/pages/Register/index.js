@@ -13,7 +13,7 @@ import {
 
 import api from "../../services/api";
 
-export default function Register() {
+export default function Register({ navigation }) {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -139,7 +139,10 @@ export default function Register() {
       <TouchableOpacity style={styles.registerBtn} onPress={handleSubmit}>
         <Text style={styles.registerLabel}>Registrar</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.loginLink}>
+      <TouchableOpacity
+        style={styles.loginLink}
+        onPress={() => navigation.navigate("Login")}
+      >
         <Text style={styles.loginLinkText}>
           Já possui uma conta? Faça login agora.
         </Text>
